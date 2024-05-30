@@ -1,0 +1,48 @@
+body {
+  background-color: #FAF7FD;
+  margin: 0;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 43px;
+}
+
+.title-home {
+  color: #AE7BE1;
+
+  font-weight: 700;
+  font-style: normal;
+  font-size: 8rem;
+
+  margin: 0;
+}
+
+.check-list-button {
+  width: 33rem;
+
+  text-align: center;
+
+  text-decoration: none;
+  color: #AE7BE1;
+
+  font-weight: 550;
+  font-style: normal;
+  font-size: 2rem;
+
+  border: 1.9px solid #AE7BE1;
+  border-radius: 10px;
+
+  padding: 1.5rem;
+}
+
+.check-list-button:hover {
+  background-color: #AE7BE1;
+  color: #FAF7FD;
+
+  transition: 0.5s;
+}
