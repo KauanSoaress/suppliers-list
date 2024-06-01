@@ -15,17 +15,9 @@
 }
 
 .card:hover  {
-  background: #AE7BE1;
+  background: #ebebeb93;
   transform: scale(1.01); /* Adicionado para aumentar o tamanho do card */
   transition: 0.5s ease;
-
-  svg path{
-    stroke: #FAF7FD;
-    transition: 0.5s ease;
-  }
-  svg {
-    border: #FAF7FD;
-  }
 }
 
 .supplier-name {
@@ -56,12 +48,4 @@ svg {
   padding: 0.5rem;
   border: 1.5px solid #AE7BE1;
   border-radius: 10px;
-}
-
-.details {
-  transition: 0.5s ease;
-}
-
-.details:hover, .delete:hover, .edit:hover {
-  border: 2px solid #FAF7FD;
 }

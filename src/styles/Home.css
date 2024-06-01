@@ -23,6 +23,10 @@ body {
 }
 
 .check-list-button {
+
+  background: none;
+
+  box-sizing: content-box;
   width: 33rem;
 
   text-align: center;
@@ -38,6 +42,8 @@ body {
   border-radius: 10px;
 
   padding: 1.5rem;
+
+  cursor: pointer;
 }
 
 .check-list-button:hover {
