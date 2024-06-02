@@ -39,6 +39,7 @@
 
 .alert-message {
   font-size: 1rem;
+  text-align: center;
 }
 
 .alert-image {
@@ -81,7 +82,36 @@
 }
 
 /* CELULARES */
-@media(max-width:450px) {
+@media(max-width:400px) {
+  .confirm-pop-up {
+    padding: 2rem 1rem;
+    width: 70%;
+  }
+
+  .alert {
+    font-size: 1.5rem;
+  }
+
+  .alert-message {
+    font-size: 1rem;
+  }
+
+  .alert-image {
+    width: 80px;
+  }
+
+  .options {
+    gap: 0.5rem;
+  }
+
+  .cancel-button, .delete-button {
+    width: 100px;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media(min-width:400px) and (max-width:450px) {
   .confirm-pop-up {
     padding: 2rem 1.5rem;
   }
@@ -96,6 +126,10 @@
 
   .alert-image {
     width: 80px;
+  }
+
+  .options {
+    gap: 1rem;
   }
 
   .cancel-button, .delete-button {
