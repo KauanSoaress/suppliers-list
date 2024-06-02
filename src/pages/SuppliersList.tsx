@@ -6,19 +6,24 @@ import SupplierEdit from '../components/SupplierEdit';
 import SupplierDetails from '../components/SupplierDetails';
 import { SetStateAction, useState } from 'react';
 import { SuppliersArray } from '../service/arrays/SuppliersArray';
+import { ISupplier } from '../types/models';
 
 export default function SuppliersList() {
-
-  const suppliersArray = SuppliersArray;
+  const suppliersArray: ISupplier[] = SuppliersArray;
 
   const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false)
   const [openSupplierEdit, setOpenSupplierEdit] = useState(false)
   const [openSupplierDetails, setOpenSupplierDetails] = useState(false)
 
   const [selectedSupplierId, setSelectedSupplierId] = useState(null);
+  const [selectedSupplierToDeleteId, setSelectedSupplierToDeleteId] = useState(null);
 
   const handleDetailsClick = (id: SetStateAction<null>) => {
     setSelectedSupplierId(id);
+  };
+
+  const removeSupplier = (id: string) => {
+    suppliersArray.splice(suppliersArray.findIndex(supplier => supplier.id === Number(id)), 1);
   };
 
   return <div className="suppliers-list-container">
@@ -42,6 +47,7 @@ export default function SuppliersList() {
             supplierEmail={supplier.email}
 
             onDetailsClick={handleDetailsClick}
+            onDeleteClick={setSelectedSupplierToDeleteId}
 
             openDeleteConfirm={openDeleteConfirm} 
             setOpenDeleteConfirm={setOpenDeleteConfirm}
@@ -75,11 +81,18 @@ export default function SuppliersList() {
       isOpen={openSupplierEdit} 
       setCloseSupplierEdit={() => setOpenSupplierEdit(!openSupplierEdit)}
     />
-    
-    <DeleteConfirm 
-      isOpen={openDeleteConfirm} 
-      setCloseDeleteConfirm={() => setOpenDeleteConfirm(!openDeleteConfirm)} 
-    />
+
+    {
+      SuppliersArray.filter(supplier => supplier.id === selectedSupplierToDeleteId).map((supplier) => {
+        return <DeleteConfirm
+          key={supplier.id}
+          supplierId={supplier.id.toString()}
+          isOpen={openDeleteConfirm} 
+          setCloseDeleteConfirm={() => setOpenDeleteConfirm(!openDeleteConfirm)}
+          removeSupplier={removeSupplier}
+        />
+      })
+    }
 
   </div>
 }

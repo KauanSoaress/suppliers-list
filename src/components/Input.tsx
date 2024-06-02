@@ -1,5 +1,3 @@
-import '../styles/Input.css';
-
 interface InputProps {
   name: string;
   children: string;
