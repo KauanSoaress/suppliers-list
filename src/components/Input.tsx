@@ -1,7 +1,9 @@
 interface InputProps {
   name: string;
+  type: string;
   children: string;
   defaultValue: string;
+  required: boolean;
   handleChange(fieldToChange: string): void;
 }
 
@@ -16,8 +18,8 @@ export const Input = (inputProps: InputProps) => {
     <>
       <label htmlFor="supplier-name">{inputProps.children}</label>
       <input
-        required 
-        type="text" 
+        required={inputProps.required}
+        type={inputProps.type}
         id={"supplier-" + inputProps.name.toLowerCase()}
         name={"supplier-" + inputProps.name.toLowerCase()}
         onBlur={hasChange}

@@ -81,10 +81,15 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
     navigate('/');
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); // Isso impede que o formulário seja enviado
+    handleSave();
+  }
+
   if (SupplierRegisterProps.isOpen) {
     return (
       <div className="fundo">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-header">
             <legend>Cadastro de fornecedor</legend>
             <button 
@@ -99,16 +104,15 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
             </button>
           </div>
 
-          <Input defaultValue='' name='Nome' handleChange={handleChangeName}>Nome</Input>
-          <Input defaultValue='' name='Categoria' handleChange={handleChangeCategory}>Categoria</Input>
-          <Input defaultValue='' name='Endereco' handleChange={handleChangeAddress}>Endereço</Input>
-          <Input defaultValue='' name='Email' handleChange={handleChangeEmail}>E-mail</Input>
-          <Input defaultValue='' name='Numero' handleChange={handleChangePhone}>Número</Input>
+          <Input defaultValue='' name='Nome' required={true} type='text' handleChange={handleChangeName}>Nome</Input>
+          <Input defaultValue='' name='Categoria' required={true} type='text' handleChange={handleChangeCategory}>Categoria</Input>
+          <Input defaultValue='' name='Endereco' required={true} type='text' handleChange={handleChangeAddress}>Endereço</Input>
+          <Input defaultValue='' name='Email' required={true} type='email' handleChange={handleChangeEmail}>E-mail</Input>
+          <Input defaultValue='' name='Numero' required={true} type='tel' handleChange={handleChangePhone}>Número</Input>
 
           <button 
             className='registerButton' 
-            type="submit" 
-            onClick={handleSave}
+            type="submit"
           >
             Cadastrar
           </button>

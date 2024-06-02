@@ -58,13 +58,18 @@ export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
     suppliersArray.splice(suppliersArray.findIndex(supplier => supplier.id === SupplierEditProps.supplierToEdit.id), 1);
     supplierAfterEdit.id = SupplierEditProps.supplierToEdit.id;
     suppliersArray.push(supplierAfterEdit);
-    navigate('/');
+    SupplierEditProps.setCloseSupplierEdit();
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); // Isso impede que o formulário seja enviado
+    handleSave();
   }
 
   if (SupplierEditProps.isOpen) {
     return (
       <div className="fundo">
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="form-header">
             <legend>Editar fornecedor</legend>
             <button 
@@ -79,16 +84,15 @@ export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
             </button>
           </div>
 
-          <Input defaultValue={SupplierEditProps.supplierToEdit.name} name='Nome' handleChange={handleChangeName}>Nome</Input>
-          <Input defaultValue={SupplierEditProps.supplierToEdit.category} name='Categoria' handleChange={handleChangeCategory}>Categoria</Input>
-          <Input defaultValue={SupplierEditProps.supplierToEdit.address} name='Endereco' handleChange={handleChangeAddress}>Endereço</Input>
-          <Input defaultValue={SupplierEditProps.supplierToEdit.email} name='Email' handleChange={handleChangeEmail}>E-mail</Input>
-          <Input defaultValue={SupplierEditProps.supplierToEdit.phone} name='Numero' handleChange={handleChangePhone}>Número</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.name} required={true} type='text' name='Nome' handleChange={handleChangeName}>Nome</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.category} required={true} type='text' name='Categoria' handleChange={handleChangeCategory}>Categoria</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.address} required={true} type='text' name='Endereco' handleChange={handleChangeAddress}>Endereço</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.email} required={true} type='email' name='Email' handleChange={handleChangeEmail}>E-mail</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.phone} required={true} type='tel' name='Numero' handleChange={handleChangePhone}>Número</Input>
 
           <button 
             className='editButton' 
             type="submit"
-            onClick={handleSave}
           >
             Pronto
           </button>
