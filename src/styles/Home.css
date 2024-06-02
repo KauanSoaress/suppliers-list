@@ -55,7 +55,19 @@
 }
 
 /* CELULARES */
-@media(max-width:450px) {
+@media(max-width:400px) {
+  .title-home {
+    font-size: 5rem;
+  }
+
+  .check-list-button {
+    width: 15rem;
+    height: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media(min-width:400px) and (max-width:450px) {
   .title-home {
     font-size: 6rem;
   }

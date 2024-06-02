@@ -112,10 +112,52 @@ input::placeholder {
   transition: 0.5s;
 }
 
-/* CELULARES */
-@media(max-width:710px) {
+@media(max-width:400px) {
   form {
     width: 60%;
+  }
+
+  .form-header {
+    margin-bottom: 1rem;
+  }
+  
+  legend {
+    font-size: 1.5rem;
+  }
+  
+  label {
+    font-size: 1rem;
+  }
+  
+  input {
+    font-size: 1rem;
+    padding: 0.5rem 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input::placeholder {
+    opacity: 0.2;
+    font-weight: 400;
+  }
+  
+  .registerButton, .editButton {
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+  }
+  
+  .close-button {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media(min-width:400px) and (max-width:700px) {
+  form {
+    width: 60%;
+  }
+
+  .form-header {
+    margin-bottom: 1rem;
   }
   
   legend {
@@ -143,8 +185,8 @@ input::placeholder {
   }
   
   .close-button {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
