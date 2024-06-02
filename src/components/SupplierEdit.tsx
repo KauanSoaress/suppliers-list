@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import '../styles/FormModal.css';
 import { ISupplier } from '../types/models';
 import { useState } from 'react';
@@ -12,9 +11,6 @@ interface SupplierEditProps {
 }
 
 export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
-
-  const navigate = useNavigate();
-
   const suppliersArray: ISupplier[] = SuppliersArray;
 
   const [supplierAfterEdit, setSupplierAfterEdit] = useState(SupplierEditProps.supplierToEdit);
