@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  width: 35%;
+}
+
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-details h1 {
+  color: #AE7BE1;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.container p {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #AE7BE1;
+}

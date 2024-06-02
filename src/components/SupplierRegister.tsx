@@ -1,4 +1,4 @@
-import '../styles/SupplierRegister.css';
+import '../styles/FormModal.css';
 
 interface SupplierRegisterProps {
   isOpen: boolean;
@@ -26,7 +26,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
           </div>
 
           <label htmlFor="supplier-name">Nome</label>
-          <input 
+          <input
+            required 
             type="text" 
             id="supplier-name" 
             name="supplier-name" 
@@ -34,7 +35,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
           />
 
           <label htmlFor="supplier-category">Categoria</label>
-          <input 
+          <input
+            required 
             type="text" 
             id="supplier-category" 
             name="supplier-category" 
@@ -42,7 +44,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
           />
 
           <label htmlFor="supplier-address">Endereço</label>
-          <input 
+          <input
+            required 
             type="text" 
             id="supplier-address" 
             name="supplier-address" 
@@ -50,7 +53,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
           />
 
           <label htmlFor="supplier-email">E-mail</label>
-          <input 
+          <input
+            required 
             type="email" 
             id="supplier-email" 
             name="supplier-email" 
@@ -58,7 +62,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
           />
 
           <label htmlFor="supplier-phone">Telefone</label>
-          <input 
+          <input
+            required 
             type="tel" 
             id="supplier-phone" 
             name="supplier-phone" 

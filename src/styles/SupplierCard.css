@@ -48,4 +48,6 @@ svg {
   padding: 0.5rem;
   border: 1.5px solid #AE7BE1;
   border-radius: 10px;
+
+  cursor: pointer;
 }

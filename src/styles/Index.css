@@ -2,3 +2,8 @@
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
+
+body {
+  background-color: #FAF7FD;
+  margin: 0;
+}

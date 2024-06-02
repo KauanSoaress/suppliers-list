@@ -59,7 +59,7 @@ input::placeholder {
   font-weight: 500;
 }
 
-.registerButton {
+.registerButton, .editButton {
   background: #AE7BE1;
   color: #FFFFFF;
   font-size: 2rem;
@@ -105,4 +105,9 @@ input::placeholder {
   justify-content: space-between;
 
   margin-bottom: 3rem;
+}
+
+.registerButton:hover, .editButton:hover {
+  background: #8E63D1;
+  transition: 0.5s;
 }

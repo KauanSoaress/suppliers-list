@@ -1,3 +1,8 @@
+.suppliers-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   margin: 4.8rem 0 0 0;
   display: flex;

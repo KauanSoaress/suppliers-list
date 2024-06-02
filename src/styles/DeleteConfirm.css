@@ -1,0 +1,81 @@
+.fundo {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+
+  z-index: 1000;
+}
+
+.confirm-pop-up {
+  background: #FFFFFF;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #AE7BE1;
+
+  padding: 2rem 4rem;
+  border-radius: 20px;
+}
+
+.alert, .alert-message {
+  margin: 0;
+  font-weight: 400;
+}
+
+.alert {
+  font-size: 2rem;
+}
+
+.alert-message {
+  font-size: 1rem;
+}
+
+.alert-image {
+  width: 120px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.cancel-button, .delete-button {
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+}
+
+.cancel-button {
+  background: #A8A8A8;
+}
+
+.delete-button {
+  background: #FF0000;
+}
+
+.cancel-button:hover {
+  background: #7A7A7A;
+  transition: 0.5s;
+}
+
+.delete-button:hover {
+  background: #CC0000;
+  transition: 0.5s;
+}
