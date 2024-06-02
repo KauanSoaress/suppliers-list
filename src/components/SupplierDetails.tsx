@@ -3,6 +3,12 @@ import '../styles/SupplierDetails.css';
 interface SupplierDetailsProps {
   isOpen: boolean;
   setCloseSupplierDetails: () => void;
+
+  supplierName: string;
+  supplierCategory: string;
+  supplierAddress: string;
+  supplierPhone: string;
+  supplierEmail: string;
 }
 
 export default function SupplierDetails(supplierDetailsProps: SupplierDetailsProps) {
@@ -11,7 +17,7 @@ export default function SupplierDetails(supplierDetailsProps: SupplierDetailsPro
       <div className='fundo'>
         <div className="container">
           <div className="header-details">
-            <h1>Nome do fornecedor</h1>
+            <h1>{supplierDetailsProps.supplierName}</h1>
             <button 
               className='close-button' 
               onClick={supplierDetailsProps.setCloseSupplierDetails}
@@ -23,10 +29,10 @@ export default function SupplierDetails(supplierDetailsProps: SupplierDetailsPro
               </svg>
             </button>
           </div>
-          <p>Categoria do fornecedor</p>
-          <p>Endereço do fornecedor</p>
-          <p>Email do fornecedor</p>
-          <p>Número do fornecedor</p>
+          <p>{supplierDetailsProps.supplierCategory}</p>
+          <p>{supplierDetailsProps.supplierAddress}</p>
+          <p>{supplierDetailsProps.supplierEmail}</p>
+          <p>{supplierDetailsProps.supplierPhone}</p>
         </div>
       </div>
     ); 

@@ -1,4 +1,10 @@
 import '../styles/FormModal.css';
+import { useNavigate } from "react-router-dom";
+import { SuppliersArray } from '../service/arrays/SuppliersArray';
+import { ISupplier } from '../types/models';
+import { ISupplierInitialState } from '../types/common/ISupplierInitialState';
+import { useState } from 'react';
+import { Input } from '../components/Input';
 
 interface SupplierRegisterProps {
   isOpen: boolean;
@@ -7,10 +13,76 @@ interface SupplierRegisterProps {
 
 export default function SupplierRegister(SupplierRegisterProps: SupplierRegisterProps) {
 
+  const navigate = useNavigate();
+
+  const suppliersArray: ISupplier[] = SuppliersArray;
+
+  const [supplierToRegister, setSupplierToRegister] = useState<ISupplier>(ISupplierInitialState);
+
+  function handleChangeName(newName: string){
+    const objectToSave: ISupplier = {
+      ...supplierToRegister,
+    }
+    objectToSave.name = newName
+
+    setSupplierToRegister({
+      ...objectToSave,
+    })
+  }
+
+  function handleChangeCategory(newCategory: string){
+    const objectToSave: ISupplier = {
+      ...supplierToRegister,
+    }
+    objectToSave.category = newCategory
+
+    setSupplierToRegister({
+      ...objectToSave,
+    })
+  }
+
+  function handleChangeAddress(newAddress: string){
+    const objectToSave: ISupplier = {
+      ...supplierToRegister,
+    }
+    objectToSave.address = newAddress
+
+    setSupplierToRegister({
+      ...objectToSave,
+    })
+  }
+
+  function handleChangeEmail(newEmail: string){
+    const objectToSave: ISupplier = {
+      ...supplierToRegister,
+    }
+    objectToSave.email = newEmail
+
+    setSupplierToRegister({
+      ...objectToSave,
+    })
+  }
+
+  function handleChangePhone(newPhone: string){
+    const objectToSave: ISupplier = {
+      ...supplierToRegister,
+    }
+    objectToSave.phone = newPhone
+
+    setSupplierToRegister({
+      ...objectToSave,
+    })
+  }
+
+  function handleSave(){
+    suppliersArray.push(supplierToRegister);
+    navigate('/');
+  }
+
   if (SupplierRegisterProps.isOpen) {
     return (
       <div className="fundo">
-        <form action="">
+        <form>
           <div className="form-header">
             <legend>Cadastro de fornecedor</legend>
             <button 
@@ -25,52 +97,20 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
             </button>
           </div>
 
-          <label htmlFor="supplier-name">Nome</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-name" 
-            name="supplier-name" 
-            placeholder='ex: Roberto da Silva'
-          />
+          <Input defaultValue='' name='Nome' handleChange={handleChangeName}>Nome</Input>
+          <Input defaultValue='' name='Categoria' handleChange={handleChangeCategory}>Categoria</Input>
+          <Input defaultValue='' name='Endereco' handleChange={handleChangeAddress}>Endereço</Input>
+          <Input defaultValue='' name='Email' handleChange={handleChangeEmail}>E-mail</Input>
+          <Input defaultValue='' name='Numero' handleChange={handleChangePhone}>Número</Input>
 
-          <label htmlFor="supplier-category">Categoria</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-category" 
-            name="supplier-category" 
-            placeholder='ex: Roupas e acessórios'
-          />
+          <button 
+            className='registerButton' 
+            type="submit" 
+            onClick={handleSave}
+          >
+            Cadastrar
+          </button>
 
-          <label htmlFor="supplier-address">Endereço</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-address" 
-            name="supplier-address" 
-            placeholder='ex: Rua, numero'
-          />
-
-          <label htmlFor="supplier-email">E-mail</label>
-          <input
-            required 
-            type="email" 
-            id="supplier-email" 
-            name="supplier-email" 
-            placeholder='ex: emailexemplo@gmail.com'
-          />
-
-          <label htmlFor="supplier-phone">Telefone</label>
-          <input
-            required 
-            type="tel" 
-            id="supplier-phone" 
-            name="supplier-phone" 
-            placeholder='ex: (99)9 9999-9999'
-          />
-
-          <button className='registerButton' type="submit">Cadastrar</button>
         </form>
       </div>
     );

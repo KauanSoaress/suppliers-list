@@ -4,13 +4,22 @@ import { Link } from 'react-router-dom';
 import DeleteConfirm from '../components/DeleteConfirm';
 import SupplierEdit from '../components/SupplierEdit';
 import SupplierDetails from '../components/SupplierDetails';
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
+import { SuppliersArray } from '../service/arrays/SuppliersArray';
 
 export default function SuppliersList() {
+
+  const suppliersArray = SuppliersArray;
 
   const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false)
   const [openSupplierEdit, setOpenSupplierEdit] = useState(false)
   const [openSupplierDetails, setOpenSupplierDetails] = useState(false)
+
+  const [selectedSupplierId, setSelectedSupplierId] = useState(null);
+
+  const handleDetailsClick = (id: SetStateAction<null>) => {
+    setSelectedSupplierId(id);
+  };
 
   return <div className="suppliers-list-container">
     <header className='header'>
@@ -21,44 +30,55 @@ export default function SuppliersList() {
     </header>
     <hr />
     <div className="cards-div">
-      <SupplierCard 
-        supplierName="Kauan Soares"   
-        openDeleteConfirm={openDeleteConfirm} 
-        setOpenDeleteConfirm={setOpenDeleteConfirm}
-        openSupplierEdit={openSupplierEdit}
-        setOpenSupplierEdit={setOpenSupplierEdit}
-        openSupplierDetails={openSupplierDetails}
-        setOpenSupplierDetails={setOpenSupplierDetails}
-      />
-      <SupplierCard supplierName="Driccia Hellen" 
-        openDeleteConfirm={openDeleteConfirm} 
-        setOpenDeleteConfirm={setOpenDeleteConfirm}
-        openSupplierEdit={openSupplierEdit}
-        setOpenSupplierEdit={setOpenSupplierEdit}
-        openSupplierDetails={openSupplierDetails}
-        setOpenSupplierDetails={setOpenSupplierDetails}
-      />
-      <SupplierCard supplierName="Ana Lorena"     
-        openDeleteConfirm={openDeleteConfirm} 
-        setOpenDeleteConfirm={setOpenDeleteConfirm}
-        openSupplierEdit={openSupplierEdit}
-        setOpenSupplierEdit={setOpenSupplierEdit}
-        openSupplierDetails={openSupplierDetails}
-        setOpenSupplierDetails={setOpenSupplierDetails}
-      />
+      {
+        suppliersArray.map((supplier) => {
+          return <SupplierCard 
+            key={supplier.id} 
+            supplierId={supplier.id}
+            supplierName={supplier.name} 
+            supplierCategory={supplier.category}
+            supplierAddress={supplier.address}
+            supplierPhone={supplier.phone}
+            supplierEmail={supplier.email}
+
+            onDetailsClick={handleDetailsClick}
+
+            openDeleteConfirm={openDeleteConfirm} 
+            setOpenDeleteConfirm={setOpenDeleteConfirm}
+
+            openSupplierEdit={openSupplierEdit}
+            setOpenSupplierEdit={setOpenSupplierEdit}
+            
+            openSupplierDetails={openSupplierDetails}
+            setOpenSupplierDetails={setOpenSupplierDetails}
+          />
+        })
+      }
     </div>
 
-    <DeleteConfirm 
-      isOpen={openDeleteConfirm} 
-      setCloseDeleteConfirm={() => setOpenDeleteConfirm(!openDeleteConfirm)} 
-    />
+    {
+      SuppliersArray.filter(supplier => supplier.id === selectedSupplierId).map((supplier) => {
+        return <SupplierDetails 
+          key={supplier.id}
+          isOpen={openSupplierDetails} 
+          setCloseSupplierDetails={() => setOpenSupplierDetails(!openSupplierDetails)}
+          supplierName={supplier.name}
+          supplierCategory={supplier.category}
+          supplierAddress={supplier.address}
+          supplierPhone={supplier.phone}
+          supplierEmail={supplier.email}
+        />
+      })
+    }
+
     <SupplierEdit 
       isOpen={openSupplierEdit} 
       setCloseSupplierEdit={() => setOpenSupplierEdit(!openSupplierEdit)}
     />
-    <SupplierDetails 
-      isOpen={openSupplierDetails} 
-      setCloseSupplierDetails={() => setOpenSupplierDetails(!openSupplierDetails)}
+    
+    <DeleteConfirm 
+      isOpen={openDeleteConfirm} 
+      setCloseDeleteConfirm={() => setOpenDeleteConfirm(!openDeleteConfirm)} 
     />
 
   </div>
