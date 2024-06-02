@@ -8,7 +8,7 @@ export default function MainRoutes() {
     <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/suppliers-list" element={<SuppliersList />} />
-    
+      
       <Route path='*' element={<Navigate to="/home"/>}/>
     </Routes>
   )

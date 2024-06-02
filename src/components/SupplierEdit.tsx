@@ -1,11 +1,66 @@
+import { useNavigate } from 'react-router-dom';
 import '../styles/FormModal.css';
+import { ISupplier } from '../types/models';
+import { useState } from 'react';
+import { SuppliersArray } from '../service/arrays/SuppliersArray';
+import { ISupplierInitialState } from '../types/common/ISupplierInitialState';
+import { Input } from './Input';
 
 interface SupplierEditProps {
   isOpen: boolean;
   setCloseSupplierEdit: () => void;
+  supplierToEdit: ISupplier;
 }
 
 export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
+
+  const navigate = useNavigate();
+
+  const suppliersArray: ISupplier[] = SuppliersArray;
+
+  const [supplierAfterEdit, setSupplierAfterEdit] = useState(SupplierEditProps.supplierToEdit);
+
+  function handleChangeName(newName: string){
+    setSupplierAfterEdit(prevState => ({
+      ...prevState,
+      name: newName
+    }));
+  }
+
+  function handleChangeCategory(newCategory: string){
+    setSupplierAfterEdit(prevState => ({
+      ...prevState,
+      category: newCategory
+    }));
+  }
+
+  function handleChangeAddress(newAddress: string){
+    setSupplierAfterEdit(prevState => ({
+      ...prevState,
+      address: newAddress
+    }));
+  }
+
+  function handleChangeEmail(newEmail: string){
+    setSupplierAfterEdit(prevState => ({
+      ...prevState,
+      email: newEmail
+    }));
+  }
+
+  function handleChangePhone(newPhone: string){
+    setSupplierAfterEdit(prevState => ({
+      ...prevState,
+      phone: newPhone
+    }));
+  }
+
+  function handleSave(){
+    suppliersArray.splice(suppliersArray.findIndex(supplier => supplier.id === SupplierEditProps.supplierToEdit.id), 1);
+    supplierAfterEdit.id = SupplierEditProps.supplierToEdit.id;
+    suppliersArray.push(supplierAfterEdit);
+    navigate('/');
+  }
 
   if (SupplierEditProps.isOpen) {
     return (
@@ -25,52 +80,19 @@ export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
             </button>
           </div>
 
-          <label htmlFor="supplier-name">Nome</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-name" 
-            name="supplier-name" 
-            defaultValue='Roberto da Silva'
-          />
+          <Input defaultValue={SupplierEditProps.supplierToEdit.name} name='Nome' handleChange={handleChangeName}>Nome</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.category} name='Categoria' handleChange={handleChangeCategory}>Categoria</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.address} name='Endereco' handleChange={handleChangeAddress}>Endereço</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.email} name='Email' handleChange={handleChangeEmail}>E-mail</Input>
+          <Input defaultValue={SupplierEditProps.supplierToEdit.phone} name='Numero' handleChange={handleChangePhone}>Número</Input>
 
-          <label htmlFor="supplier-category">Categoria</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-category" 
-            name="supplier-category" 
-            defaultValue='Roupas e acessórios'
-          />
-
-          <label htmlFor="supplier-address">Endereço</label>
-          <input
-            required 
-            type="text" 
-            id="supplier-address" 
-            name="supplier-address" 
-            defaultValue='Rua, numero'
-          />
-
-          <label htmlFor="supplier-email">E-mail</label>
-          <input
-            required 
-            type="email" 
-            id="supplier-email" 
-            name="supplier-email" 
-            defaultValue='emailexemplo@gmail.com'
-          />
-
-          <label htmlFor="supplier-phone">Telefone</label>
-          <input
-            required 
-            type="tel" 
-            id="supplier-phone" 
-            name="supplier-phone" 
-            defaultValue='(99)9 9999-9999'
-          />
-
-          <button className='editButton' type="submit">Pronto</button>
+          <button 
+            className='editButton' 
+            type="submit"
+            onClick={handleSave}
+          >
+            Pronto
+          </button>
         </form>
       </div>
     );

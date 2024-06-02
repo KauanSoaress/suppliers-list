@@ -9,6 +9,7 @@ interface SupplierCardProps {
   supplierEmail: string;
 
   onDetailsClick: any,
+  onEditClick: any,
   onDeleteClick: any,
   
   openDeleteConfirm: boolean;
@@ -36,7 +37,10 @@ export default function SupplierCard(SupplierCardProps: SupplierCardProps) {
         <path d="M22.2324 27.3598C25.1925 27.3598 27.5922 24.9602 27.5922 22C27.5922 19.0399 25.1925 16.6402 22.2324 16.6402C19.2722 16.6402 16.8726 19.0399 16.8726 22C16.8726 24.9602 19.2722 27.3598 22.2324 27.3598Z" stroke="#AE7BE1" stroke-width="1.78661" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
 
-      <svg onClick={() => SupplierCardProps.setOpenSupplierEdit(!SupplierCardProps.openSupplierEdit)}
+      <svg onClick={() => {
+        SupplierCardProps.setOpenSupplierEdit(!SupplierCardProps.openSupplierEdit)
+        SupplierCardProps.onEditClick(SupplierCardProps.supplierId)
+      }}
         width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20.11 7.70712H7.60373C6.65606 7.70712 5.7472 8.08359 5.07709 8.75369C4.40698 9.4238 4.03052 10.3327 4.03052 11.2803V36.2928C4.03052 37.2405 4.40698 38.1494 5.07709 38.8195C5.7472 39.4896 6.65606 39.8661 7.60373 39.8661H32.6162C33.5639 39.8661 34.4728 39.4896 35.1429 38.8195C35.813 38.1494 36.1894 37.2405 36.1894 36.2928V23.7866" stroke="#AE7BE1" stroke-width="1.66339" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M33.5096 5.02723C34.2204 4.31647 35.1844 3.91718 36.1895 3.91718C37.1947 3.91718 38.1587 4.31647 38.8694 5.02723C39.5802 5.73799 39.9795 6.70198 39.9795 7.70714C39.9795 8.7123 39.5802 9.6763 38.8694 10.3871L21.8967 27.3598L14.7502 29.1464L16.5369 22L33.5096 5.02723Z" stroke="#AE7BE1" stroke-width="1.66339" stroke-linecap="round" stroke-linejoin="round"/>

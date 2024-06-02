@@ -17,6 +17,7 @@ export default function SuppliersList() {
 
   const [selectedSupplierId, setSelectedSupplierId] = useState(null);
   const [selectedSupplierToDeleteId, setSelectedSupplierToDeleteId] = useState(null);
+  const [supplierToEdit, setSupplierToEdit] = useState(null);
 
   const handleDetailsClick = (id: SetStateAction<null>) => {
     setSelectedSupplierId(id);
@@ -48,6 +49,7 @@ export default function SuppliersList() {
 
             onDetailsClick={handleDetailsClick}
             onDeleteClick={setSelectedSupplierToDeleteId}
+            onEditClick={setSupplierToEdit}
 
             openDeleteConfirm={openDeleteConfirm} 
             setOpenDeleteConfirm={setOpenDeleteConfirm}
@@ -77,10 +79,17 @@ export default function SuppliersList() {
       })
     }
 
-    <SupplierEdit 
-      isOpen={openSupplierEdit} 
-      setCloseSupplierEdit={() => setOpenSupplierEdit(!openSupplierEdit)}
-    />
+    {
+      SuppliersArray.filter(supplier => supplier.id === supplierToEdit).map((supplier) => {
+        return <SupplierEdit 
+        isOpen={openSupplierEdit} 
+        setCloseSupplierEdit={() => setOpenSupplierEdit(!openSupplierEdit)}
+        supplierToEdit={supplier}
+      />
+      })
+    }
+
+    
 
     {
       SuppliersArray.filter(supplier => supplier.id === selectedSupplierToDeleteId).map((supplier) => {

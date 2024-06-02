@@ -75,6 +75,8 @@ export default function SupplierRegister(SupplierRegisterProps: SupplierRegister
   }
 
   function handleSave(){
+    const id = suppliersArray.length + 1;
+    supplierToRegister.id = id;
     suppliersArray.push(supplierToRegister);
     navigate('/');
   }
