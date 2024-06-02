@@ -13,6 +13,8 @@
   font-weight: 700;
   font-style: normal;
   font-size: 8rem;
+  
+  text-align: center;
 
   margin: 0;
 }
@@ -52,10 +54,10 @@
   transition: 0.5s;
 }
 
+/* CELULARES */
 @media(max-width:450px) {
   .title-home {
     font-size: 6rem;
-    text-align: center;
   }
 
   .check-list-button {

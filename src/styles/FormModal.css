@@ -112,6 +112,7 @@ input::placeholder {
   transition: 0.5s;
 }
 
+/* CELULARES */
 @media(max-width:450px) {
   form {
     width: 60%;

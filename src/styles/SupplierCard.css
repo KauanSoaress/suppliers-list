@@ -52,6 +52,7 @@ svg {
   cursor: pointer;
 }
 
+/* CELULARES */
 @media(max-width:450px) {
   .card {
     width: 75%;

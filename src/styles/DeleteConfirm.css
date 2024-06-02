@@ -80,6 +80,7 @@
   transition: 0.5s;
 }
 
+/* CELULARES */
 @media(max-width:450px) {
   .confirm-pop-up {
     padding: 2rem 1.5rem;

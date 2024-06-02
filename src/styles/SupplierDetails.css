@@ -24,6 +24,7 @@
   color: #AE7BE1;
 }
 
+/* CELULARES */
 @media(max-width:450px) {
   .container {
     width: 60%;
