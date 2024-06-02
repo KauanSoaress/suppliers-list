@@ -3,7 +3,6 @@ import '../styles/FormModal.css';
 import { ISupplier } from '../types/models';
 import { useState } from 'react';
 import { SuppliersArray } from '../service/arrays/SuppliersArray';
-import { ISupplierInitialState } from '../types/common/ISupplierInitialState';
 import { Input } from './Input';
 
 interface SupplierEditProps {
