@@ -51,7 +51,7 @@ hr {
   }
   
   .supplier-list-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   
   .arrow-back {
@@ -62,7 +62,27 @@ hr {
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+/* TABLETS */
+@media(min-width:450px) and (max-width:820px) {
+  .header {
+    margin: 4.8rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-  hr {
+  .supplier-list-title {
+    font-size: 3rem;
+  }
+  
+  .arrow-back {
+    left: 2rem;
+  }
+  
+  .arrow-image {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
