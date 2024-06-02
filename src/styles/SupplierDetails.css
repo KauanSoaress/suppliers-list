@@ -23,3 +23,17 @@
   font-weight: 500;
   color: #AE7BE1;
 }
+
+@media(max-width:450px) {
+  .container {
+    width: 60%;
+  }
+
+  .header-details h1 {
+    font-size: 1.8rem;
+  }
+
+  .container p {
+    font-size: 1.2rem;
+  }
+}

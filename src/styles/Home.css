@@ -39,6 +39,10 @@
   padding: 1.5rem;
 
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .check-list-button:hover {
@@ -46,4 +50,17 @@
   color: #FAF7FD;
 
   transition: 0.5s;
+}
+
+@media(max-width:450px) {
+  .title-home {
+    font-size: 6rem;
+    text-align: center;
+  }
+
+  .check-list-button {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.3rem;
+  }
 }

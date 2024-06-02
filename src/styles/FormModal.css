@@ -111,3 +111,37 @@ input::placeholder {
   background: #8E63D1;
   transition: 0.5s;
 }
+
+@media(max-width:450px) {
+  form {
+    width: 60%;
+  }
+  
+  legend {
+    font-size: 1.5rem;
+  }
+  
+  label {
+    font-size: 1.2rem;
+  }
+  
+  input {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  input::placeholder {
+    opacity: 0.2;
+    font-weight: 400;
+  }
+  
+  .registerButton, .editButton {
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+  }
+  
+  .close-button {
+    width: 4rem;
+  }
+}
