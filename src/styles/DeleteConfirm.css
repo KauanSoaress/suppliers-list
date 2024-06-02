@@ -105,8 +105,10 @@
   }
 }
 
+
+
 /* TABLETS */
-@media(min-width:450px) and (max-width:820px) {
+@media(min-width:710px) and (max-width:820px) {
   .confirm-pop-up {
     padding: 2rem 2.5rem;
   }
@@ -115,11 +117,7 @@
     font-size: 2rem;
   }
 
-  .alert-message {
-    font-size: 1.2rem;
-  }
-
   .alert-image {
-    width: 100px;
+    width: 120px;
   }
 }

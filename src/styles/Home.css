@@ -67,8 +67,20 @@
   }
 }
 
+@media(min-width:450px) and (max-width:710px) {
+  .title-home {
+    font-size: 6rem;
+  }
+
+  .check-list-button {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.3rem;
+  }
+}
+
 /* TABLETS */
-@media(min-width:450px) and (max-width:820px) {
+@media(min-width:710px) and (max-width:820px) {
   .title-home {
     font-size: 8rem;
   }

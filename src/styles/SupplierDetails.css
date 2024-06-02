@@ -53,3 +53,17 @@
     font-size: 1.5rem;
   }
 }
+
+@media(min-width:820px) and (max-width:1300px) {
+  .container {
+    width: 60%;
+  }
+
+  .header-details h1 {
+    font-size: 2.5rem;
+  }
+
+  .container p {
+    font-size: 1.5rem;
+  }
+}
