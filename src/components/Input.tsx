@@ -24,7 +24,7 @@ export const Input = (inputProps: InputProps) => {
         type={inputProps.type}
         id={"supplier-" + inputProps.name.toLowerCase()}
         name={"supplier-" + inputProps.name.toLowerCase()}
-        onBlur={hasChange}
+        onChange={hasChange}
         defaultValue={inputProps.defaultValue}
         placeholder={
           inputProps.children === "Categoria" 
