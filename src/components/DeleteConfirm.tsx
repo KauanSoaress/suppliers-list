@@ -16,6 +16,7 @@ export default function DeleteConfirm(deleteConfirmProps: DeleteConfirmProps) {
           <h2 className="alert">Atenção!</h2>
           <p className="alert-message">Deseja realmente excluir o fornecedor?</p>
           <div className="options">
+
             <button 
               className='cancel-button' 
               onClick={() => {
@@ -24,6 +25,7 @@ export default function DeleteConfirm(deleteConfirmProps: DeleteConfirmProps) {
             >
               Cancelar
             </button>
+
             <button 
               className='delete-button' 
               onClick={() => {
@@ -33,6 +35,7 @@ export default function DeleteConfirm(deleteConfirmProps: DeleteConfirmProps) {
             >
               Excluir
             </button>
+            
           </div>
         </div>
       </div>
