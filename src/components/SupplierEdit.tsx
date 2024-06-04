@@ -58,7 +58,7 @@ export default function SupplierEdit(SupplierEditProps: SupplierEditProps) {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault(); // Isso impede que o formulário seja enviado
+    event.preventDefault(); 
     handleSave();
   }
 

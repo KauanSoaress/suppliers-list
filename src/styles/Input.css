@@ -12,7 +12,7 @@ input {
   margin-bottom: 1rem;
 
   border: none;
-  border-bottom: 1.9px solid #AE7BE1; /* Bordas apenas na parte inferior */
+  border-bottom: 1.9px solid #AE7BE1;
   outline: none;
   width: 90%;
 }

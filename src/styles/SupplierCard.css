@@ -16,7 +16,7 @@
 
 .card:hover  {
   background: #ebebeb93;
-  transform: scale(1.01); /* Adicionado para aumentar o tamanho do card */
+  transform: scale(1.01); 
   transition: 0.5s ease;
 }
 
@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: 600;
 
-  max-width: 60rem; /* Ajuste para o tamanho desejado */
+  max-width: 60rem; 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

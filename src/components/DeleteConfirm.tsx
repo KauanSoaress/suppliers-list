@@ -2,9 +2,9 @@ import '../styles/DeleteConfirm.css';
 
 interface DeleteConfirmProps {
   isOpen: boolean;
-  supplierId: string; // Adicione esta linha
+  supplierId: string;
   setCloseDeleteConfirm: () => void;
-  removeSupplier: (id: string) => void; // Adicione esta linha
+  removeSupplier: (id: string) => void;
 }
 
 export default function DeleteConfirm(deleteConfirmProps: DeleteConfirmProps) {

@@ -48,8 +48,8 @@ legend {
 
   cursor: pointer;
 
-  display: block; /* Faz o botão ocupar toda a linha */
-  margin: 1rem auto 0 auto; /* Centraliza o botão */
+  display: block;
+  margin: 1rem auto 0 auto;
 }
 
 .close-button {
