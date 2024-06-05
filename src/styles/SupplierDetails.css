@@ -6,6 +6,10 @@
   width: 35%;
 }
 
+h1, p {
+  word-wrap: break-word;
+}
+
 .header-details {
   display: flex;
   justify-content: space-between;
@@ -27,7 +31,7 @@
 /* CELULARES */
 @media(max-width:450px) {
   .container {
-    width: 60%;
+    width: 75%;
   }
 
   .header-details h1 {
