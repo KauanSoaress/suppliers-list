@@ -27,6 +27,8 @@ export default function SuppliersList() {
     suppliersArray.splice(suppliersArray.findIndex(supplier => supplier.id === Number(id)), 1);
   };
 
+  const sortedSuppliersArray = suppliersArray.sort((a, b) => a.id - b.id);
+
   return <div className="suppliers-list-container">
     <header className='header'>
       <Link to="/" className='arrow-back'>
@@ -37,7 +39,7 @@ export default function SuppliersList() {
     <hr />
     <div className="cards-div">
       {
-        suppliersArray.map((supplier) => {
+        sortedSuppliersArray.map((supplier) => {
           return <SupplierCard 
             key={supplier.id} 
             supplierId={supplier.id}
