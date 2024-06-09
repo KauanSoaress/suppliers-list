@@ -1,6 +1,6 @@
 # Lista de Fornecedores - Desafio Insight Front-End
 
-  - Proposta de solução para o desafio de criar o front-end de uma lista de fornecedores proposto pelo Insight Lab.
+  - Proposta de solução para o desafio proposto pelo Insight Lab de criar o front-end de uma lista de fornecedores.
 
 # Sobre o projeto
   - Foi feito utilizando TypeScript com o framework ReactJS;
